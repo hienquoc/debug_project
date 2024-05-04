@@ -3,6 +3,7 @@ import os
 import pprint
 import json
 class debug_class():
+    debug_activated = True
     def __init__(self, custom_variables={"No variables provided": True}, debug_activated=False, file_name='debug.txt', pretty=False):
         self.debug_activated = debug_activated
         self.pretty = pretty
@@ -10,7 +11,7 @@ class debug_class():
         self.indent_number = 0
         self.tab = self.get_number_of_tabs_as_string()
         self.debug_variable_dictionary = custom_variables
-        if self.debug_activated is True:
+        if self.debug_activated:
             self.print_dictionary()
 
     def print_dictionary(self):
